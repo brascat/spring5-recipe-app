@@ -18,6 +18,8 @@ public class Recipe {
 
     @Lob
     private String directions;
+
+    @Enumerated(value = EnumType.STRING)
     private Difficulty difficulty;
 
     @Lob
