@@ -1,13 +1,7 @@
 package guru.springframework.spring5recipeapp.domain;
 
 import javax.persistence.*;
-<<<<<<< HEAD
-<<<<<<< HEAD
 import java.util.Set;
-=======
->>>>>>> ae372ad (Add recipe jpa and class)
-=======
->>>>>>> ae372ad (Add recipe jpa and class)
 
 @Entity
 public class Recipe {
@@ -32,15 +26,9 @@ public class Recipe {
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
     private Set<Ingredient> ingredients;
 
-=======
->>>>>>> ae372ad (Add recipe jpa and class)
-=======
->>>>>>> ae372ad (Add recipe jpa and class)
     public Long getId() {
         return id;
     }
@@ -128,9 +116,6 @@ public class Recipe {
     public void setImage(Byte[] image) {
         this.image = image;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-
     public Set<Ingredient> getIngredients() {
         return ingredients;
     }
@@ -138,8 +123,4 @@ public class Recipe {
     public void setIngredients(Set<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
-=======
->>>>>>> ae372ad (Add recipe jpa and class)
-=======
->>>>>>> ae372ad (Add recipe jpa and class)
 }
