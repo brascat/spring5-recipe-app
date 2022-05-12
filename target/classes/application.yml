@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:dev
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+    # platform: data-${platform}.sql
+  # h2 database
+  h2:
+    console:
+      # Enabling H2 Console
+      enabled: true
+      settings:
+        # Whether to enable trace output.
+        trace: false
+        # Whether to enable remote access.
+        web-allow-others: true
+    # Custom H2 Console URL (but no effect)
+    path: /h2-console
+  # JPA
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: create-drop
+        # ddl-auto options:
+        # none,
+        # validate
+        # updates
+        # create
+      # create-drop
+    open-in-view: false
+    defer-datasource-initialization: true
