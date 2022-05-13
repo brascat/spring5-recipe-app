@@ -1,6 +1,7 @@
 package guru.springframework.spring5recipeapp.domain;
 
 import javax.persistence.*;
+import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -39,6 +40,11 @@ public class Recipe {
     private Set<Category> categories = new HashSet<>();
 
 
+    public Ingredient addNewIngredient(String name, BigDecimal amount, UnitOfMeasure uom) {
+        Ingredient ingredient = new Ingredient(name, amount, uom, this);
+        ingredients.add(ingredient);
+        return ingredient;
+    }
     public Long getId() {
         return id;
     }
