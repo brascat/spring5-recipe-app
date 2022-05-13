@@ -15,9 +15,9 @@
         <th>PrepTime</th>
       </tr>
       <tr th:each="recipe : ${recipes}">
-        <th th:text="${recipe.id}">Id</th>
-        <th th:text="${recipe.description}">Recipe name</th>
-        <th th:text="${recipe.prepTime}">Prep time</th>
+        <td th:text="${recipe.id}">Id</td>
+        <td th:text="${recipe.description}">Recipe name</td>
+        <td th:text="${recipe.prepTime}">Prep time</td>
       </tr>
     </table>
   </div>
