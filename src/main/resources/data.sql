@@ -1,9 +1,10 @@
 INSERT INTO category (category_name) VALUES ('American');
-INSERT INTO category (description) VALUES ('Italian');
-INSERT INTO category (description) VALUES ('Mexican');
-INSERT INTO category (description) VALUES ('Fast Food');
+INSERT INTO category (category_name) VALUES ('Italian');
+INSERT INTO category (category_name) VALUES ('Mexican');
+INSERT INTO category (category_name) VALUES ('Fast Food');
 INSERT INTO unit_of_measure (description) VALUES ('Teaspoon');
 INSERT INTO unit_of_measure (description) VALUES ('Tablespoon');
 INSERT INTO unit_of_measure (description) VALUES ('Cup');
 INSERT INTO unit_of_measure (description) VALUES ('Pinch');
 INSERT INTO unit_of_measure (description) VALUES ('Ounce');
+INSERT INTO recipe (description, prep_time, cook_time, servings, url, directions) VALUES ('How to Make the Best Guacamole', 10, 0, 4, 'https://www.simplyrecipes.com/recipes/perfect_guacamole/', '1. Cut the avocado: Cut the avocados in half. Remove the pit. Score the inside of the avocado with a blunt knife and scoop out the flesh with a spoon. Place in a bowl.\n');
