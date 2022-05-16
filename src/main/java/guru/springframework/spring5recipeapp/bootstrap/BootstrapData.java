@@ -31,7 +31,7 @@ public class BootstrapData implements ApplicationListener<ContextRefreshedEvent>
         // Object initialization
         recipeRepository.save(getTacoRecipe());
         // SQL initialization
-        //recipeRepository.save(getGuacRecipe());
+        recipeRepository.save(getGuacRecipe());
     }
 
     private Recipe getTacoRecipe() {
