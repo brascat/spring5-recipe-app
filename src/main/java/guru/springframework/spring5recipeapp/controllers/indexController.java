@@ -32,11 +32,11 @@ public class indexController {
         return "index";
     }
 
-    @RequestMapping("/recipes")
+    @RequestMapping("/all")
     public String getRecipesPage(Model model) {
 
         model.addAttribute("recipes", recipeService.getAllRecipes());
 
-        return "recipes";
+        return "all";
     }
 }
