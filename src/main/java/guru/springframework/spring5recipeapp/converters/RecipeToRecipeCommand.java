@@ -1,6 +1,7 @@
 package guru.springframework.spring5recipeapp.converters;
 
 import guru.springframework.spring5recipeapp.commands.RecipeCommand;
+import guru.springframework.spring5recipeapp.domain.Category;
 import guru.springframework.spring5recipeapp.domain.Recipe;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;

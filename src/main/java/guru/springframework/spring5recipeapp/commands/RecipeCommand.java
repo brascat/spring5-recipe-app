@@ -3,6 +3,7 @@ package guru.springframework.spring5recipeapp.commands;
 import guru.springframework.spring5recipeapp.domain.Difficulty;
 
 import java.util.HashSet;
+import java.util.Set;
 
 public class RecipeCommand {
     private Long id;
