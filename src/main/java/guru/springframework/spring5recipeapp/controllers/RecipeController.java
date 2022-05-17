@@ -26,16 +26,21 @@ public class RecipeController {
     @RequestMapping("/recipes/new")
     public String newRecipe(Model model) {
         model.addAttribute("recipe", new RecipeCommand());
-
         return "recipes/recipeform";
     }
 
     @PostMapping
-    @RequestMapping("recipe")
+    @RequestMapping("recipes")
     public String saveOrUpdate(@ModelAttribute RecipeCommand command) {
         RecipeCommand savedCommand = recipeService.saveRecipeCommand(command);
 
-        return "redirect:/recipes/show/" + savedCommand.getId();
+        return "redirect:/recipes/" + savedCommand.getId() + "/show";
+    }
+
+    @RequestMapping("recipes/{id}/update")
+    public String updateRecipe(@PathVariable String id, Model model){
+        model.addAttribute("recipe", recipeService.findCommandById(Long.valueOf(id)));
+        return  "recipes/recipeform";
     }
 
 }

@@ -30,12 +30,14 @@
                       <th>ID</th>
                       <th>Name</th>
                       <th>View</th>
+                      <th>Update</th>
                   </tr>
                 </thead>
                 <tr th:each="recipe : ${recipes}">
                   <td th:text="${recipe.id}">Id</td>
                   <td th:text="${recipe.description}">Recipe name</td>
-                  <td th:text="View"><a href="#" th:href="@{'/show/' + ${recipe.id}">View</a></td>
+                  <td><a href="#" th:href="@{'/recipes/' + ${recipe.id} + '/show'}">View</a></td>
+                  <td><a href="#" th:href="@{'/recipes/' + ${recipe.id} + '/update'}">Update</a></td>
                 </tr>
               </table>
             </div>
