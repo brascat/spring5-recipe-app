@@ -45,6 +45,13 @@ public class Recipe {
         ingredients.add(ingredient);
         return ingredient;
     }
+
+    public Recipe addIngredient(Ingredient ingredient) {
+        ingredient.setRecipe(this);
+        this.ingredients.add(ingredient);
+        return this;
+    }
+
     public Long getId() {
         return id;
     }
