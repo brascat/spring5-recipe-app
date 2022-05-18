@@ -64,6 +64,11 @@ public class BootstrapData implements ApplicationListener<ContextRefreshedEvent>
         Optional<Recipe> guacRecipeOptional = recipeRepository.findByDescription("How to Make the Best Guacamole");
         Recipe guacRecipe = guacRecipeOptional.get();
         guacRecipe.setDifficulty(Difficulty.EASY);
+
+        Notes guacNotes = new Notes();
+        guacNotes.setRecipe(guacRecipe);
+        guacNotes.setRecipeNotes("It is good.");
+        guacRecipe.setNotes(guacNotes);
         return guacRecipe;
     }
 }
