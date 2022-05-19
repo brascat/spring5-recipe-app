@@ -3,6 +3,7 @@ package guru.springframework.spring5recipeapp.domain;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Entity
@@ -52,6 +53,15 @@ public class Recipe {
         return this;
     }
 
+    public Recipe removeIngredient(Long id) {
+        Optional<Ingredient> ingredientOptional = ingredients.stream()
+                .filter(ingredient -> ingredient.getId().equals(id))
+                .findFirst();
+        Ingredient ingredient = ingredientOptional.get();
+        ingredient.setRecipe(null);
+        ingredients.remove(ingredient);
+        return this;
+    }
     public Long getId() {
         return id;
     }

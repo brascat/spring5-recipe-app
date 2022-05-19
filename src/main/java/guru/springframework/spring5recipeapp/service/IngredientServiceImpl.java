@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class IngredientServiceImpl implements IngredientService {
@@ -46,6 +47,22 @@ public class IngredientServiceImpl implements IngredientService {
 
 
         return ingredientCommandOptional.get();
+    }
+
+    @Override
+    public void deleteById(Long recipeId, Long id) {
+        Optional<Recipe> recipeOptional = recipeRepository.findById(recipeId);
+        Recipe recipe = recipeOptional.get();
+        Optional<Ingredient> ingredientOptional = recipe.getIngredients().stream()
+                .filter(ingredient -> ingredient.getId().equals(id))
+                .findFirst();
+        Ingredient ingredient = ingredientOptional.get();
+        ingredient.setRecipe(null);
+        Set<Ingredient> ings = recipe.getIngredients();
+        ings.remove(ingredient);
+        recipe.setIngredients(ings);
+        //recipe.removeIngredient(id);
+        recipeRepository.save(recipe);
     }
 
     @Override
@@ -97,5 +114,7 @@ public class IngredientServiceImpl implements IngredientService {
             //to do check for fail
             return ingredientToIngredientCommand.convert(savedIngredientOptional.get());
         }
+
+
     }
 }
