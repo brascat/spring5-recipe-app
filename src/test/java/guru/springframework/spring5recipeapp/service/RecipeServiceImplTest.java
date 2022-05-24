@@ -86,4 +86,9 @@ class RecipeServiceImplTest {
         assertThrows(NotFoundException.class, () -> {Recipe recipeReturned = recipeService.findById(1L);});
     }
 
+    @Test
+    public void getRecipeByIdTestNumberFormat() throws Exception {
+        assertThrows(NumberFormatException.class, () -> {Recipe recipeReturned = recipeService.findById(Long.valueOf("asf"));});
+    }
+
 }
