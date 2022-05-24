@@ -3,6 +3,7 @@ package guru.springframework.spring5recipeapp.domain;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.HashSet;
+import java.util.Optional;
 import java.util.Set;
 
 @Entity
@@ -30,10 +31,10 @@ public class Recipe {
     @OneToOne(cascade = CascadeType.ALL)
     private Notes notes;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "recipe", fetch = FetchType.EAGER)
     private Set<Ingredient> ingredients = new HashSet<>();
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "recipe_category",
             joinColumns = @JoinColumn(name = "recipe_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id"))
@@ -44,6 +45,22 @@ public class Recipe {
         Ingredient ingredient = new Ingredient(name, amount, uom, this);
         ingredients.add(ingredient);
         return ingredient;
+    }
+
+    public Recipe addIngredient(Ingredient ingredient) {
+        ingredient.setRecipe(this);
+        this.ingredients.add(ingredient);
+        return this;
+    }
+
+    public Recipe removeIngredient(Long id) {
+        Optional<Ingredient> ingredientOptional = ingredients.stream()
+                .filter(ingredient -> ingredient.getId().equals(id))
+                .findFirst();
+        Ingredient ingredient = ingredientOptional.get();
+        ingredient.setRecipe(null);
+        ingredients.remove(ingredient);
+        return this;
     }
     public Long getId() {
         return id;

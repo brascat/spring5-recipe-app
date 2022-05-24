@@ -10,8 +10,10 @@ import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 @Component
 public class BootstrapData implements ApplicationListener<ContextRefreshedEvent> {
@@ -64,6 +66,15 @@ public class BootstrapData implements ApplicationListener<ContextRefreshedEvent>
         Optional<Recipe> guacRecipeOptional = recipeRepository.findByDescription("How to Make the Best Guacamole");
         Recipe guacRecipe = guacRecipeOptional.get();
         guacRecipe.setDifficulty(Difficulty.EASY);
+
+        Notes guacNotes = new Notes();
+        guacNotes.setRecipe(guacRecipe);
+        guacNotes.setRecipeNotes("It is good.");
+        guacRecipe.setNotes(guacNotes);
+        Set<Category> categories = new HashSet<>();
+        Optional<Category> categoryOptional = categoryRepository.findByCategoryName("American");
+        categories.add(categoryOptional.get());
+        guacRecipe.setCategories(categories);
         return guacRecipe;
     }
 }

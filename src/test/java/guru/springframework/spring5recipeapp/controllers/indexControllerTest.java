@@ -61,7 +61,7 @@ class indexControllerTest {
 
         ArgumentCaptor<Set<Recipe>> argumentCaptor = ArgumentCaptor.forClass(Set.class);
 
-        assertEquals("recipes", indexController.getRecipesPage(model));
+        assertEquals("all", indexController.getRecipesPage(model));
         verify(recipeService, times(1)).getAllRecipes();
         verify(model, times(1)).addAttribute(eq("recipes"), argumentCaptor.capture());
         Set<Recipe> setInController = argumentCaptor.getValue();
