@@ -70,7 +70,7 @@ class RecipeControllerTest {
 
         when(recipeService.saveRecipeCommand(any())).thenReturn(command);
 
-        mockMvc.perform(post("/recipes")
+        mockMvc.perform(post("/recipes/")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED))
                 .andExpect(status().is3xxRedirection())
                 .andExpect(view().name("redirect:/recipes/2/show"));
@@ -91,7 +91,7 @@ class RecipeControllerTest {
 
     @Test
     public void testDeleteAction() throws Exception{
-        mockMvc.perform(get("/recipes/1/delete")).andExpect(status().is3xxRedirection()).andExpect(view().name("redirect:/"));
+        mockMvc.perform(get("/recipes/1/delete")).andExpect(status().is3xxRedirection()).andExpect(view().name("redirect:/all"));
         verify(recipeService, times(1)).deleteById(anyLong());
     }
 }
