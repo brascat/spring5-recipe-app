@@ -12,14 +12,14 @@
           crossorigin="anonymous"></script>
   </head>
 <body>
-<h1 class="display-5 fw-bold text-center"><img src="https://cdn-icons-png.flaticon.com/512/3003/3003695.png" style="height:50px; width:50px; margin-right:20px;">
+<h1 class="display-5 fw-bold text-center"><img src="/static/recipe-book.png" th:src="@{/recipe-book.png}" style="height:50px; width:50px; margin-right:20px;">
   Catarina's Totally Not Stolen Recipes</h1>
   <div class="container-fluid" style="margin-top:30px;">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <div class="panel panel-primary" style="border-color: black; border-width: 2px;">
+        <div class="panel panel-primary" style="border-color: black; border-width: 1px;">
 
-          <div class="panel-heading" style="background-color: #CD78A7;border-color: black; border-width: 2px;">
+          <div class="panel-heading" style="background-color: #3EB0A9;">
             <h1 class="panel-title">My Recipes!</h1>
           </div>
           <div class="panel-body">
@@ -40,7 +40,6 @@
                   <td><a href="#" th:href="@{'/recipes/' + ${recipe.id} + '/show'}">View</a></td>
                   <td><a href="#" th:href="@{'/recipes/' + ${recipe.id} + '/update'}">Update</a></td>
                   <td><a href="#" th:href="@{'/recipes/' + ${recipe.id} + '/delete'}">Delete</a></td>
-
                 </tr>
               </table>
             </div>

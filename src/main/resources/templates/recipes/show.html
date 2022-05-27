@@ -16,14 +16,11 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="panel-group">
-                <div class="panel panel-primary" style="border-color: black; border-width: 2px;">
-                    <div class="panel-heading" style="background-color: #CD78A7;border-color: black; border-width: 2px;">
+                <div class="panel panel-primary" style="border-color: black; border-width: 1px;">
+                    <div class="panel-heading" style="background-color: #3EB0A9;">
                         <div class="row">
-                            <div class="col-md-3">
-                                <h1 class="panel-title" th:text="${recipe.description}">Recipe Description Here!</h1>
-                            </div>
-
-                            <div class="col-md-1">
+                            <div style="float:left; margin-left:15px; margin-top:7px"><h1 class="panel-title" th:text="${recipe.description}">Recipe Description Here!</h1></div>
+                            <div style="float: right; margin-right: 10px">
                                 <a class="btn btn-default" href="#"
                                    th:href="@{'/recipes/' + ${recipe.id} + '/image'}" role="button">Change Image</a>
                             </div>
@@ -61,7 +58,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-3">
-                                <h5>Cooktime:</h5>
+                                <h5>Cook Time:</h5>
                             </div>
                             <div class="col-md-3">
                                 <p th:text="${recipe.cookTime}">30 min</p>
@@ -89,13 +86,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-primary" style="border-color: black; border-width: 2px;">
-                    <div class="panel-heading" style="background-color: #CD78A7;border-color: black; border-width: 2px;">
+                <div class="panel panel-primary" style="border-color: black; border-width: 1px;">
+                    <div class="panel-heading" style="background-color: #3EB0A9;">
                         <div class="row">
-                            <div class="col-sm-8">
+                            <div style="float:left; margin-left:15px; margin-top:7px">
                                 <h1 class="panel-title align-middle" >Ingredients</h1>
                             </div>
-                            <div class="col-sm-4 align-self-end">
+                            <div style="float:right;margin-right: 10px;">
                                 <a class="btn btn-default" href="#" th:href="@{'/recipes/' + ${recipe.id} + '/ingredients'}" role="button">View</a>
                             </div>
                         </div>
@@ -110,8 +107,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-primary" style="border-color: black; border-width: 2px;">
-                    <div class="panel-heading" style="background-color: #CD78A7;border-color: black; border-width: 2px;">
+                <div class="panel panel-primary" style="border-color: black; border-width: 1px;">
+                    <div class="panel-heading" style="background-color: #3EB0A9;">
                         <h1 class="panel-title" >Directions</h1>
                     </div>
                     <div class="panel-body">
@@ -122,8 +119,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="panel panel-primary" style="border-color: black; border-width: 2px;">
-                    <div class="panel-heading" style="background-color: #CD78A7;border-color: black; border-width: 2px;">
+                <div class="panel panel-primary" style="border-color: black; border-width: 1px;">
+                    <div class="panel-heading" style="background-color: #3EB0A9;">
                         <h1 class="panel-title" >Notes</h1>
                     </div>
                     <div class="panel-body">

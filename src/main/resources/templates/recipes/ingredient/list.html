@@ -17,14 +17,14 @@
 <div class="container-fluid" style="margin-top:30px;">
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <div class="panel panel-primary" style="border-color: black; border-width: 2px;">
+      <div class="panel panel-primary" style="border-color: black; border-width: 1px;">
 
-        <div class="panel-heading" style="background-color: #CD78A7;border-color: black; border-width: 2px;">
+        <div class="panel-heading" style="background-color: #3EB0A9;">
           <div class="row">
-            <div class="col-sm-9">
+            <div style="float:left; margin-left:15px; margin-top:7px">
               <h1 class="panel-title">Ingredients</h1>
             </div>
-            <div class="col-sm-4">
+            <div style="float:right; margin-right: 10px">
               <a class="btn btn-default" href="#" th:href="@{'/recipes/' + ${recipe.id} + '/ingredient/new'}" role="button">New</a>
             </div>
           </div>
